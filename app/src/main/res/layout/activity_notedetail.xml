@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbarColor"
+        android:id="@+id/headingcontainer">
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/back_arrow"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
+            android:id = "@+id/back_arr"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back_arr"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:text="Add Your Story Heading"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:textSize="@dimen/control_font_size_normal"
+            android:maxLines="3"
+            android:lineSpacingExtra="10dp"
+            android:textColor="@color/toolbartextColor"
+            android:id="@+id/heading" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/heading"
+            android:text="last Updated:"
+            android:textSize="15dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDIT"
+            android:textColor="@color/toolbartextColor"
+            android:textSize="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headingcontainer">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Your Story Description"
+            android:textColor="@color/toolbartextColor"
+            android:textSize="22dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp" />
+        </ScrollView>
+
+</RelativeLayout>

@@ -20,4 +20,6 @@ public class AddEditNoteActivity extends AppCompatActivity{
         setContentView(R.layout.activity_addedit);
         ButterKnife.bind(this);
     }
+
+
 }

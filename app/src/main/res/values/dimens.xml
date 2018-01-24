@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_padding">15dp</dimen>
+    <dimen name="toolbar_icon_margin_horizontal">10dp</dimen>
+    <dimen name="tab_layout_icon_padding">12dp</dimen>
+    <dimen name="control_font_size_normal">25dp</dimen>
+    <dimen name="fab_margin">30dp</dimen>
+</resources>

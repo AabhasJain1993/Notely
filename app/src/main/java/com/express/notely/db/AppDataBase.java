@@ -10,22 +10,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class AppDataBase extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION=1;
-    private static final String DATABASE_NAME="todo";
-    private static final String TABLE_TO_DO_ITEMS ="todoitems";
-   // private static final String TABLE_UNANALYSED_PHOTOS="unanalysedphotos";
-    //private static final String TABLE_FACE_VECTOR="facevector";
+    private static final String DATABASE_NAME="notely";
+    private static final String TABLE_NOTES ="notes";
 
     private static final String KEY_ID="id";
-    private static final String KEY_CATEGORY="category";
-    private static final String KEY_ITEM_NUMBER="number";
-    //private static final String KEY_DISPLAY_NAME="displayname";
-    //private static final String KEY_IS_JUNK="isjunk";
-    //private static final String KEY_IS_SHOW_THUMBNAILS="showthumbnails";
-    private static final String KEY_PHOTO_TAG_INDEX="tagindex";
-    private static final String KEY_CONFIDENCE="confidence";
-    private static final String KEY_TAG_TIME="tagtime";
-    //private static final String KEY_PHOTO_HASH="photohash";
-    private static final String KEY_FACE_VECTOR="vector";
+    private static final String KEY_TITLE="title";
+    private static final String KEY_DESCRIPTION="description";
+    private static final String KEY_LAST_UPDATED = "updated";
+    private static final String KEY_IS_POEM = "ispoem";
+    private static final String KEY_IS_STORY = "isstory";
+    private static final String KEY_IS_HEARTED = "ishearted";
+    private static final String KEY_IS_STARED = "isstared";
 
 
     private static AppDataBase appDataBase;
@@ -48,10 +43,10 @@ public class AppDataBase extends SQLiteOpenHelper {
 //                + KEY_ID + " INTEGER PRIMARY KEY, " + KEY_PATH + " TEXT, "
 //                + KEY_DISPLAY_NAME + " TEXT, " + KEY_IS_JUNK +" INTEGER, "+ KEY_IS_SHOW_THUMBNAILS+ " INTEGER)";
 
-      //  String CREATE_ITEMS_TABLE="CREATE TABLE "+ TABLE_TO_DO_ITEMS + "("
+      //  String CREATE_ITEMS_TABLE="CREATE TABLE "+ TABLE_NOTES + "("
         //         + KEY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+ KEY_CATEGORY + " TEXT, "
       //          + KEY_ITEM_NUMBER + " INTEGER)";
-        String CREATE_ITEMS_TABLE="CREATE TABLE "+ TABLE_TO_DO_ITEMS + "("
+        String CREATE_ITEMS_TABLE="CREATE TABLE "+ TABLE_NOTES + "("
                  + KEY_CATEGORY + " TEXT PRIMARY KEY, "
                  + KEY_ITEM_NUMBER + " INTEGER)";
 //        String CREATE_UNANALYSED_PHOTO_TABLE="CREATE TABLE "+ TABLE_UNANALYSED_PHOTOS + "("
@@ -70,7 +65,7 @@ public class AppDataBase extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //db.execSQL("DROP TABLE IF EXISTS"+TABLE_KNOWN_FOLDER);
-        db.execSQL("DROP TABLE IF EXISTS " +TABLE_TO_DO_ITEMS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTES);
         onCreate(db);
     }
 
